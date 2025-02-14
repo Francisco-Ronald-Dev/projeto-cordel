@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap'); /* Aqui nos estamos Importando Uma Fonte do Google Fontes, o nome destá fonte que Importamos é : ("Passion One").*/
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap'); /* Aqui nos estamos Importando Uma Fonte do Google Fontes, o nome destá fonte que Importamos é : ("Sriracha").*/
+
+/* Aqui logo abaixo nos vamos começar a Criar as nossas Variaveis em CSS, estamos atribuindo as Variaveis o Comando das Fontes que o Site do Google Fonts disponibiliza.*/
+:root{
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif; /* Exceto esta variavel, esta variavel aqui possui apenas as Fontes padrões e não usamos nenhum comando do site do Google Fonts aqui nesta Variavel.*/
+
+    --fonte2: "Passion One", serif;
+    --fonte3: "Sriracha", serif;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html, body{
+    min-height: 100vh; /* O tamanho Minimo da Altura vai ser de 100% da viewport.*/
+    background-color: darkgray;
+    font-family: var(--fonte1);
+}
+header{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+header > h1{
+    padding-top: 50px;
+    /* O Codigo : (text-transform: Upercase;) deixa todo o texto em letras MAIUSCULAS. */
+    font-variant: small-caps; /* Este Comando (font-variant: small-caps;) deixa o texto em letras Maiusculas mas as primeiras letras ficam um pouco maiores.*/
+
+    font-family: var(--fonte2);
+
+    font-size: 10vw; /* Aqui nos estamos usando a Propriedade (font-size:) e estamos atribuindo o valor (10vw;), esta Medida (vw) simplesmente é a Largura da Viewport, ou seja, nos estamos atribuindo ao Tamanho desta Fonte o valor de 10% da Largura da Viewport.*/
+}
+header > p{
+    padding-bottom: 50px; /* Aqui nos estamos criando um espaço em baixo dos Creditos do Criador da Poesia, esse espaço fica visivelmente agradavel para separarmos um pouco os Creditos do Conteúdo da Página.*/
+}
+
+header a, footer a{ /* O jeito ao qual declaramos este Seletor pode ser um pouco confuso mas não é, é bem simples, estas Configurações seram aplicadas a todos as Tag's de Links (a) que existem no Cabeçalho que é a Tag (header) e também seram aplicadas as Tag's de Links (a) que existem dentro do "Roda-pé" que é a Tag (footer) é lá que nos adicionamos mais creditos tmb a quem fez a Página Web.*/
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+header a:hover, footer a:hover{ /* Este Seletor é semelhante ao criado logo acima, básicamente as Configurações deste Seletor seram aplicadas sempre que passarmos o Mouse por cima de algum Tag de Link (a) do Cabeçalho que é a Tag (header), as Configurações deste Seletor também seram aplicadas sempre que passarmos o Mouse por cima de alguma Tag de Link (a) do "Roda-pé" que é a nossa Tag (footer).*/
+    text-decoration: underline;
+
+}
+
+
+section{ /* Tudo que nos configurarmos aqui na Tag (section) neset Seletor vai valer para as suas "Variações que tem Classes" no caso (section.normal) e (section.imagem) digamos assim.*/
+    padding-top: 10vh; /* Aqui nos estamos atribuindo um (Paddin-top) que vai criar um espaço correspondente a 10% da Viewport em cima de Cada Tag (section) e suas "Variantes" como (section.normal) e (section.imagem).*/
+    padding-bottom: 10vh; /* Aqui nos estamos atribuindo um (Paddin-bottom) que vai criar um espaço correspondente a 10% da Viewport em baixo de Cada Tag (section) e suas "Variantes" como (section.normal) e (section.imagem).*/
+    line-height: 2em; /* Aqui nos usamos a Propriedade (line-heigh: 2em;) para criarmos um espaçamento entre cada Linha das Seções e este espaçamento é correspondente a duas vezes do espaçamento normal, essa é a Médida (em).*/
+    padding-left: 30px;
+    font-family: var(--fonte3);
+    font-size: 3.5vw; /* Aqui nos estamos usando a Propriedade (font-size:) e estamos atribuindo o valor (3.5vw;), esta Medida (vw) simplesmente é a Largura da Viewport, ou seja, nos estamos atribuindo ao Tamanho desta Fonte o valor de 3.5% da Largura da Viewport.*/
+}
+
+section > p{
+    padding-bottom: 2em; /* Aqui nos estamos criando um espaço em baixo de cada Parágrafo (p) da Tag (section) e este espaço criado tem o valor de (2em) que é duas vezes maior que o espaço normal. Essa é a medida (em)*/
+
+}
+
+/* Agora nos vamos voltar para o nosso Documento HTML e vamos criar (ID's) para as Tag's (section) que tem a classe (imagem). Já que vamos usar duas Imagens aqui no nosso Site vamos usar dois (ID's) diferentes.*/
+
+section.normal{
+    background-color: white;
+    color: black;
+}
+
+section.imagem{
+    
+    background-color: rgb(68, 68, 68);
+    color: rgb(255, 255, 255);
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.434); /* Aqui nos estamos usando a Propriedade (box-shadow:) e estamos atribuindo a ela o valor (inset) que faz com que a Sombra seja para dentro da "Caixa"/(Box-model) e atribuimos também os demais 4 valores da sombra.*/
+
+    background-attachment: fixed; /* Aqui nos usamos a Propriedade (background-attchments:) e atribumos a ela o valor (fixed;) que vai adicionar nas nossas Imagens do site uma Imprensão de "Paralax" o que é muito interessante.*/
+}
+
+section.imagem > p{
+    /*width: 400px; */ /* Comprimento.*/
+
+    display: inline-block; /* Aqui nos estamos usando a Propriedade (display:) e estamos atribuindo a ela o valor (inline-block;), isso faz com que a "Caixa" da Tag se adapte ao Tamanho (Altura e Largura) do seu Conteúdo.*/
+
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.51);
+    text-shadow: 1px 1px 0px black;
+}
+
+section#img01{ /* Aqui nos estamos criando o Seletor usando o (ID) da Tag (section) ao qual atribuiremos uma imagem de fundo.*/
+    background-image: url('../pacote-d012/imagens/background001.jpg'); /* Aqui nos estamos atruindo uma Imagem.*/
+    background-position: right center; /* Aqui nos estamos posicionando o ponto de Partida da nossa Imagem.*/
+    background-size: cover; /* Aqui nos usamos a Propriedade (background-size:) e atribuimos a ela o valor (cover;) que é para amostrar toda a Imagem sem fazer Recortes.*/
+}
+
+section#img02{ /* Aqui nos estamos criando o Seletor usando o (ID) da Tag (section) ao qual atribuiremos uma imagem de fundo.*/
+    background-image: url('../pacote-d012/imagens/background002.jpg'); /* Aqui nos estamos atruindo uma Imagem.*/
+    background-size: cover; /* Aqui nos usamos a Propriedade (background-size:) e atribuimos a ela o valor (cover;) que é para amostrar toda a Imagem sem fazer Recortes.*/
+}
+
+/* Quando formos criar o nosso Arquivo CSS é bom mantermos uma ordemm de começo, meio e fim como fizemos neste arquivo, por exemplo : a Tag (footer) é a última parte do Documento HTML e aqui no CSS este Seletor da Tag (footer) é a ultima coisa que fizemos neste Documento.*/
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
